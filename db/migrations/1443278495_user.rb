@@ -4,6 +4,7 @@ Sequel.migration do
       primary_key :id
       String :email
       String :name
+      Integer :unconfirmed_tries, default: 0
       DateTime :confirmed_at
 
 

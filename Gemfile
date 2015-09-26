@@ -6,8 +6,6 @@ gem 'rake'
 gem 'sequel'
 gem 'haml' 
 gem 'dotenv'
-gem 'grape'
-gem 'grape-swagger'
 gem 'sqlite3'
 gem 'active_interaction'
 

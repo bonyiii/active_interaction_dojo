@@ -9,6 +9,8 @@ gem 'dotenv'
 gem 'grape'
 gem 'grape-swagger'
 gem 'sqlite3'
+gem 'active_interaction'
+
 
 group :development do
   gem 'shotgun'

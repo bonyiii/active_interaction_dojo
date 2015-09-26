@@ -1,4 +1,6 @@
-require('./config/environment')
+Bundler.require(:default, ENV.fetch('RACK_ENV', 'development'))
+Dotenv.load
+DB = Sequel.connect(ENV['DATABASE_URL'])
 Sequel.extension :migration
 
 namespace :db do

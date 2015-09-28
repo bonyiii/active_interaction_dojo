@@ -29,7 +29,7 @@ Cuba.define do
             res.status = 200
             res.write({ todos: outcome.result.to_json })
           else
-            res.status = 500
+            res.status = 422
             res.write({ user: { errors: outcome.errors.messages } })
           end
         end
@@ -38,10 +38,10 @@ Cuba.define do
           outcome = CreateTodo.run(req.params)
 
           if outcome.valid?
-            res.status = 200
+            res.status = 201
             res.write({ todo: outcome.result.to_json })
           else
-            res.status = 500
+            res.status = 422
             res.write({ todo: { errors: outcome.errors.messages } })
           end
         end
@@ -52,10 +52,10 @@ Cuba.define do
       outcome = CreateUser.run(req.params)
 
       if outcome.valid?
-        res.status = 200
+        res.status = 201
         res.write({ user: outcome.result.to_json })
       else
-        res.status = 500
+        res.status = 422
         res.write({ user: { errors: outcome.errors.messages } })
       end
     end

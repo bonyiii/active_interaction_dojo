@@ -1,6 +1,8 @@
 class CreateUser < ActiveInteraction::Base
-  string :name
-  string :email
+  string :name,
+    desc: 'User name'
+  string :email,
+    desc: 'User email'
 
   validates :name,
     presence: true

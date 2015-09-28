@@ -1,5 +1,6 @@
 class ListTodos < ActiveInteraction::Base
-  integer :user_id
+  integer :user_id,
+    desc: 'Todos owner user id'
 
   def execute
     if user_allowed?

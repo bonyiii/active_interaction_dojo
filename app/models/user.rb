@@ -4,10 +4,6 @@ class User < Sequel::Model
 
   one_to_many :todos
 
-  def validate
-    super
-  end
-
   def confirmed?
     !!confirmed_at
   end

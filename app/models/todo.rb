@@ -3,8 +3,4 @@ class Todo < Sequel::Model
   plugin :json_serializer
 
   many_to_one :user
-
-  def validate
-    super
-  end
 end

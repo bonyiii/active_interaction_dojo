@@ -15,7 +15,7 @@ Cuba.define do
             res.status = 200
             res.write({ user: { confirmed: true } })
           else
-            res.status = 500
+            res.status = 422
             res.write({ user: { errors: outcome.errors.messages } })
           end
         end
@@ -35,7 +35,7 @@ Cuba.define do
         end
 
         on post do
-          outcome = CreateTodo.run(req.params)
+          outcome = CreateTodo.run(req.params.merge(user_id: user_id))
 
           if outcome.valid?
             res.status = 201

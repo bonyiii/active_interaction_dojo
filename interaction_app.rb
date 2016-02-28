@@ -3,6 +3,11 @@ Cuba.define do
     res.write "Yes, it works"
   end
 
+  on 'wifi/connected' do
+    res.status 200
+    res.write({ mac: ok })
+  end
+
   on 'users' do
 
     # First rule match so to create todos it must be before of create user

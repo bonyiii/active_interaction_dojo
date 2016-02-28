@@ -19,4 +19,5 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubycritic'
   gem 'pry'
+  gem 'rspec'
 end
